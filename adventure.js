@@ -6,7 +6,7 @@ var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
 var item = document.getElementById("inventoryItem");
 
-title.innerText = "Area 51 ½ - de prequel";
+title.innerText = "AREA 51 ½ – PREQUEL";
 story.innerText = "// verhaal";
 button1.innerText = "// actie 1";
 button2.innerText = "// actie 2";
@@ -16,10 +16,10 @@ button3.innerText = "// actie 3";
 var levelImage = document.createElement("img");
 gameContainer.appendChild(levelImage);
 // afbeelding wordt toegevoegd
-levelImage.src = "img/voorbeeld.jpg";
+levelImage.src = "img/start.jpg";
 // styling van de afbeelding in element img
 levelImage.style.height = "auto";
-levelImage.style.width = "200px";
+levelImage.style.width = "500px";
 levelImage.style.margin = "auto";
 levelImage.style.gridArea = "image";
 
@@ -63,6 +63,16 @@ footer.innerText = "© Diony Busker, 2019";
 footer.style.gridArea = "footer";
 footer.style.margin = "5px auto";
 footer.style.fontSize = "12px";
+
+
+// onclick events toevoegen aan de buttons
+button1.onclick = action;
+
+function action() {
+    alert("Er is geklikt op de eerste knop!");
+}
+
+
 
 
 // een nieuwe script tag wordt aangemaakt, hiermee kan een andere js file ingeladen worden
