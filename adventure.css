@@ -9,17 +9,20 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-areas: 'title title'
+                         'level image'
                          'story image'
+                         'button inventory'
                          'button item';
     grid-template-rows: minmax(50px, auto);
     grid-template-columns: repeat(2);
 }
 
 #game-container > #title {
-    width: 100%;
     background-color: yellow;
     grid-area: title;
     margin: 0;
+    padding: 10px;
+    text-align: center;
 }
 
 /* #grid-container > #image {
@@ -27,11 +30,11 @@ body {
 } */
 
 #game-container > #description {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    min-height: 50px;
     background-color: red;
     grid-area: story;
-    /* padding: 10px 20px; */
+    padding: 10px;
 }
 
 #game-container > #game-buttons {
@@ -54,4 +57,5 @@ body {
     width: 500px;
     background-color: blue;
     grid-area: item;
+    height: 175px;
 }
