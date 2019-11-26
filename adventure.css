@@ -1,6 +1,7 @@
 body {
     background-color: #E3E3E3;
     font-family: Calibri;
+    margin: 0;
 }
 
 #game-container {
