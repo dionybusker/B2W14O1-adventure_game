@@ -13,7 +13,8 @@ body {
                          'level image'
                          'story image'
                          'button inventory'
-                         'button item';
+                         'button item'
+                         'footer footer';
     grid-template-rows: minmax(50px, auto);
     grid-template-columns: repeat(2);
 }
