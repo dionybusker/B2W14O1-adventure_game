@@ -1,0 +1,53 @@
+body {
+    background-color: #E3E3E3;
+    font-family: Calibri;
+}
+
+#game-container {
+    background-color: white;
+    width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 'title title'
+                         'story story'
+                         'button item';
+    grid-template-rows: minmax(50px, auto);
+    grid-template-columns: repeat(2);
+}
+
+#game-container > #title {
+    width: 100%;
+    background-color: yellow;
+    grid-area: title;
+    margin: 0;
+}
+
+#game-container > #description {
+    width: 100%;
+    height: auto;
+    background-color: red;
+    grid-area: story;
+    /* padding: 10px 20px; */
+}
+
+#game-container > #game-buttons {
+    width: 500px;
+    background-color: green;
+    grid-area: button;
+}
+
+#game-container > #game-buttons > button {
+    background-color: #2f5496;
+    color: white;
+    border: 1px solid black;
+    /* font-weight: bold; */
+    width: 300px;
+    height: 50px;
+    margin: 10px 20px;
+}
+
+#game-container > #inventoryItem {
+    width: 500px;
+    background-color: blue;
+    grid-area: item;
+}
