@@ -20,13 +20,14 @@ body {
 }
 
 #game-container > #title {
-    background-color: black;
+    background-color: #2f5496;
     grid-area: title;
     margin: 0;
     padding: 10px;
     text-align: center;
     color: white;
     font-size: 20px;
+    border: 1px solid black;
 }
 
 /* #grid-container > #image {
