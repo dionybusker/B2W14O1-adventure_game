@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-areas: 'title title'
-                         'story story'
+                         'story image'
                          'button item';
     grid-template-rows: minmax(50px, auto);
     grid-template-columns: repeat(2);
@@ -21,6 +21,10 @@ body {
     grid-area: title;
     margin: 0;
 }
+
+/* #grid-container > #image {
+    grid-area: image;
+} */
 
 #game-container > #description {
     width: 100%;
