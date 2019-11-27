@@ -1,6 +1,8 @@
 var br = `\n \n`;
 var next = "Ga verder...";
 var dead = "GAME OVER!";
+var win = "GEWONNEN!";
+var tbc = "WORDT VERVOLGD..."; // to be continued
 
 
 
