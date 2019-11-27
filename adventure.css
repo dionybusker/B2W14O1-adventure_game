@@ -10,7 +10,7 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-areas: 'title title'
-                         'level image'
+                         'level level'
                          'story image'
                          'empty inventory'
                          'button item'
@@ -36,11 +36,14 @@ body {
 
 #game-container > #description {
     /* width: 100%; */
-    min-height: 200px;
+    height: 250px;
     /* background-color: red; */
     grid-area: story;
     padding: 10px;
     border: 1px dotted black;
+    margin: 0 10px;
+    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 #game-container > #game-buttons {
@@ -48,7 +51,7 @@ body {
     /* background-color: green; */
     grid-area: button;
     text-align: center;
-    margin: auto 0;
+    margin: auto 10px;
 }
 
 #game-container > #game-buttons > button {
@@ -62,11 +65,25 @@ body {
     border-radius: 15px;
 }
 
+#game-container > #game-buttons > button:hover {
+    cursor: pointer;
+    background-color: #213f73;
+}
+
 #game-container > #inventoryItem {
     /* width: 499px; */
     /* background-color: blue; */
     grid-area: item;
     height: 175px;
     border: 1px dotted black;
-
+    margin: 0 10px;
 }
+
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar { width: 7px; }
+/* track */
+::-webkit-scrollbar-thumb { background: #888; } /* #213f73 */
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover { background: #555; } /* #2f5496 */
