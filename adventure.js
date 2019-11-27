@@ -36,6 +36,7 @@ levelImage.style.maxHeight = "300px";
 levelImage.style.width = "500px";
 levelImage.style.margin = "auto 10px auto auto";
 levelImage.style.gridArea = "image";
+levelImage.style.outlineStyle = "solid";
 
 // element h2 wordt aangemaakt, hier komt het level waar je in zit
 var level = document.createElement("h2");
