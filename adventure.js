@@ -604,5 +604,3 @@ function level_10() {
     button2.onclick = action2;
     button3.onclick = action3;
 }
-
-// start();
