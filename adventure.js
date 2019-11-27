@@ -81,12 +81,14 @@ footer.style.fontSize = "12px";
 // onclick events toevoegen aan de buttons
 button1.onclick = action;
 button2.onclick = action;
+button3.onclick = action;
 
 function action() {
     // story.innerText = level_1;
     level_1();
     button1.onclick = level_1_action1;
     button2.onclick = level_1_action2;
+    // level_2();
 }
 
 
