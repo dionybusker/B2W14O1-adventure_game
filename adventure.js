@@ -80,14 +80,16 @@ footer.style.fontSize = "12px";
 
 // onclick events toevoegen aan de buttons
 button1.onclick = action;
+button2.onclick = action;
 
 function action() {
-    story.innerText = level_1;
-    button1.innerText = `Je zet je mobiel uit`;
-    button2.style.visibility = "visible";
-    button2.innerText = `Je laat je mobiel aan`;
-    button3.style.visibility = "hidden"
-    levelImage.src = "img/level_1-bus.jpg";
+    // story.innerText = level_1;
+    if (level_1()) {
+        button1.onclick = level_1_action1;
+        button2.onclick = level_1_action2;
+    }
+    // level_1();
+
 }
 
 
