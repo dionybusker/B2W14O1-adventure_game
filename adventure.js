@@ -1,3 +1,14 @@
+// een nieuwe script tag wordt aangemaakt, hiermee kan een andere js file ingeladen worden
+var ref = document.getElementsByTagName("script")[0];
+var script = document.createElement("script");
+script.src = "story.js";
+
+ref.parentNode.insertBefore(script, ref);
+
+// titel van de pagina wordt aangepast
+document.title = "Area 51 ½ - prequel"
+
+
 var gameContainer = document.getElementById("game-container");
 var title = document.getElementById("title");
 var story = document.getElementById("description");
@@ -18,9 +29,9 @@ gameContainer.appendChild(levelImage);
 // afbeelding wordt toegevoegd
 levelImage.src = "img/start.jpg";
 // styling van de afbeelding in element img
-levelImage.style.height = "auto";
+levelImage.style.maxHeight = "300px";
 levelImage.style.width = "500px";
-levelImage.style.margin = "auto";
+levelImage.style.margin = "auto 10px auto auto";
 levelImage.style.gridArea = "image";
 
 // element h2 wordt aangemaakt, hier komt het level waar je in zit
@@ -53,6 +64,7 @@ inventory.style.height = "30px";
 // // styling van de afbeelding van item
 
 item.style.paddingTop = "10px";
+item.style.visibility = "hidden";
 
 // het element footer wordt aangemaakt
 var footer = document.createElement("footer");
@@ -65,19 +77,20 @@ footer.style.margin = "5px auto";
 footer.style.fontSize = "12px";
 
 
+
 // onclick events toevoegen aan de buttons
 button1.onclick = action;
 
 function action() {
-    alert("Er is geklikt op de eerste knop!");
+    story.innerText = level_1;
+    button1.innerText = `Je zet je mobiel uit`;
+    button2.style.visibility = "visible";
+    button2.innerText = `Je laat je mobiel aan`;
+    button3.style.visibility = "hidden"
+    levelImage.src = "img/level_1-bus.jpg";
 }
 
 
 
 
-// een nieuwe script tag wordt aangemaakt, hiermee kan een andere js file ingeladen worden
-var ref = document.getElementsByTagName("script")[0];
-var script = document.createElement("script");
-script.src = "story.js";
 
-ref.parentNode.insertBefore(script, ref);
