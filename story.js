@@ -90,7 +90,7 @@ var level5_action2 = `Je haalt haastig de sleutel uit je zak. “Verdomme, had i
 var level6_action1 = `Je laat je op je knieën zakken en steekt je handen in de lucht. De man trekt ruw de tas van je rug af en stopt zijn handen erin. Hij gooit alle spullen eruit en smijt de tas opzij. De man fluistert iets door zijn walkietalkie en knikt dan. Hij verlaat de ruimte en een paar minuten later valt er een schotregen door het huis. Je wilt wegduiken, maar je bent al te laat.`;
 
 // je overmeestert de man
-var level6_action2 = `Je had het niet van jezelf verwacht maar het is je gelukt de wapen van de man af te pakken en deze op hem te richten. Je voelt je machtig door het wapen. De adrenaline gutst door je lijf.`;
+var level6_action2 = `Je had het niet van jezelf verwacht maar het is je gelukt het wapen van de man af te pakken en deze op hem te richten. Je voelt je machtig door het wapen. De adrenaline gutst door je lijf.`;
 
 // je spreekt hem tegen
 var level6_action3 = `Je kijkt de man recht in de ogen aan maar hij lijkt niet te willen luisteren. Hij tilt het wapen op en schiet zonder ook maar enige aarzeling.`;
