@@ -194,6 +194,7 @@ function level_2() {
     button3.onclick = action3;
 }
 
+
 function level_3() {
     var levelTitle = document.getElementById("level");
     levelTitle.innerText = "Level 3 - bessenstruik";
@@ -250,7 +251,358 @@ function level_3() {
 }
 
 
-//verder vanaf level 4
+function level_4() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 4 - leven of dood";
+    levelImage.src = "img/level_4-leven_of_dood.png";
 
+    story.innerText = levelFour;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "hidden";
+
+    button1.innerText = "Je pakt het mes";
+    button2.innerText = "Je pakt de sleutel";
+    
+    function action1() {
+        level.innerText = "Je pakt het mes";
+
+        story.innerText = level4_action1;
+
+        button1.innerText = next;
+        button1.onclick = level_5;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    function action2() {
+        level.innerText = "Je neemt de sleutel";
+
+        story.innerText = level4_action2;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+}
+
+
+function level_3() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 5 - wild animal attack";
+    levelImage.src = "img/level_5-wild_animal_attack.jpg";
+
+    story.innerText = levelFive;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "hidden";
+
+    button1.innerText = "Het zakmes";
+    button2.innerText = "De sleutel";
+    
+    function action1() {
+        level.innerText = "Het zakmes";
+
+        story.innerText = level5_action1;
+
+        button1.innerText = next;
+        button1.onclick = level_6;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    function action2() {
+        level.innerText = "De sleutel";
+
+        story.innerText = level5_action2;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+}
+
+
+function level_6() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 6 - verboden toegang";
+    levelImage.src = "img/level_6-verboden_toegang.jpg";
+
+    story.innerText = levelSix;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "visible";
+
+    button1.innerText = "Je doet wat hij zegt";
+    button2.innerText = "Je overmeestert de man";
+    button3.innerText = "Je spreekt hem tegen";
+    
+    function action1() {
+        level.innerText = "Je doet wat hij zegt";
+
+        story.innerText = level6_action1;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    function action2() {
+        level.innerText = "Je overmeestert de man";
+
+        story.innerText = level6_action2;
+
+        button1.innerText = next;
+        button1.onclick = level_7;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    function action3() {
+        level.innerText = "Je spreekt hem tegen";
+
+        story.innerText = level6_action3;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+    button3.onclick = action3;
+}
+
+
+function level_7() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 7 - verlaten huisje";
+    levelImage.src = "img/level_7-verlaten_huisje.jpg"
+
+    story.innerText = levelSeven;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "hidden";
+
+    button1.innerText = "Haal de trekker over";
+    button2.innerText = "Laat het wapen zakken";
+    
+    function action1() {
+        level.innerText = "Haal de trekker over";
+
+        story.innerText = level7_action1;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    function action2() {
+        level.innerText = "Laat het wapen zakken";
+
+        story.innerText = level7_action2;
+
+        button1.innerText = next;
+        button1.onclick = level_8;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+}
+
+
+function level_8() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 8 - laboratorium";
+    levelImage.src = "img/level_8-laboratorium.jpg"
+
+    story.innerText = levelEight;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "visible";
+
+    button1.innerText = "Leg de voorwerpen neer";
+    button2.innerText = "Negeer de brief";
+    button3.innerText = "Je hebt geen bessen...";
+    
+    function action1() {
+        level.innerText = "Leg de voorwerpen neer";
+
+        story.innerText = level8_action1;
+
+        button1.innerText = win;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#4C8507";
+    }
+
+    function action2() {
+        level.innerText = "Negeer de brief";
+
+        story.innerText = level8_action2;
+
+        button1.innerText = next;
+        button1.onclick = level_9;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    function action3() {
+        level.innerText = "Je hebt geen bessen...";
+
+        story.innerText = level8_action3;
+
+        button1.innerText = next;
+        button1.onclick = level_9;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+    button3.onclick = action3;
+}
+
+
+function level_9() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 9 - lege kamer";
+    levelImage.src = "img/level_9-lege_kamer.jpg"
+
+    story.innerText = levelNine;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "visible";
+
+    button1.innerText = "Maak de student wakker";
+    button2.innerText = "Maak de gijzelaar wakker";
+    button3.innerText = "Wacht in stilte af";
+    
+    function action1() {
+        level.innerText = "Maak de student wakker";
+
+        story.innerText = level9_action1;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    function action2() {
+        level.innerText = "Maak de gijzelaar wakker";
+
+        story.innerText = level9_action2;
+
+        button1.innerText = dead;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+
+        button1.style.backgroundColor = "#CC0E00";
+    }
+
+    function action3() {
+        level.innerText = "Wacht in stilte af";
+
+        story.innerText = level9_action3;
+
+        button1.innerText = next;
+        button1.onclick = level_10;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+    button3.onclick = action3;
+}
+
+
+function level_10() {
+    var levelTitle = document.getElementById("level");
+    levelTitle.innerText = "Level 10 - lange gangen";
+    levelImage.src = "img/level_10-lange_gangen.jpg"
+
+    story.innerText = levelTen;
+
+    // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
+    button2.style.visibility = "visible";
+    button3.style.visibility = "visible";
+
+    button1.innerText = "Vraag om eten";
+    button2.innerText = "Bel de hulplijnen";
+    button3.innerText = "Zoek naar de uitgang";
+    
+    function action1() {
+        level.innerText = "Vraag om eten";
+
+        story.innerText = level10_action1;
+
+        button1.innerText = tbc;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    function action2() {
+        level.innerText = "Bel de hulplijnen";
+
+        story.innerText = level10_action2;
+
+        button1.innerText = tbc;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    function action3() {
+        level.innerText = "Zoek naar de uitgang";
+
+        story.innerText = level10_action3;
+
+        button1.innerText = tbc;
+        button1.onclick = start;
+        button2.style.visibility = "hidden";
+        button3.style.visibility = "hidden";
+    }
+
+    button1.onclick = action1;
+    button2.onclick = action2;
+    button3.onclick = action3;
+}
 
 // start();
