@@ -85,6 +85,7 @@ footer.style.fontSize = "12px";
 function start() {
     var levelTitle = document.getElementById("level");
     levelImage.src = "img/start.jpg";
+    levelImage.style.filter = "none"
 
     levelTitle.innerText = "Start";
 
@@ -164,6 +165,7 @@ function level_2() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     function action2() {
@@ -188,6 +190,7 @@ function level_2() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     button1.onclick = action1;
@@ -222,6 +225,7 @@ function level_3() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     function action2() {
@@ -288,6 +292,7 @@ function level_4() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     button1.onclick = action1;
@@ -331,6 +336,7 @@ function level_3() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     button1.onclick = action1;
@@ -364,6 +370,7 @@ function level_6() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     function action2() {
@@ -388,6 +395,7 @@ function level_6() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     button1.onclick = action1;
@@ -421,6 +429,7 @@ function level_7() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     function action2() {
@@ -521,6 +530,7 @@ function level_9() {
         button3.style.visibility = "hidden";
 
         button1.style.backgroundColor = "#CC0E00";
+        levelImage.style.filter = "grayscale(100%)";
     }
 
     function action2() {
