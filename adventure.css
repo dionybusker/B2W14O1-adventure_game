@@ -69,7 +69,12 @@ body {
 
 #game-container > #game-buttons > button:hover {
     cursor: pointer;
-    background-color: #213f73;
+    /* background-color: #213f73; */
+}
+
+#game-container > #game-buttons > button:focus {
+    outline: 0;
+    /* border: none; */
 }
 
 #game-container > #inventoryItem {
