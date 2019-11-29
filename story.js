@@ -1,5 +1,6 @@
 var br = `\n \n`;
 var next = "Ga verder...";
+var game = "MINI GAME";
 var dead = "GAME OVER!";
 var win = "GEWONNEN!";
 var tbc = "WORDT VERVOLGD..."; // to be continued
@@ -78,9 +79,12 @@ var level4_action2 = `Je hebt de sleutel opgepakt en stopt het in je eigen broek
 
 
 // het zakmes
-var level5_action1 = `Je haalt haastig het zakmes uit je zak en steekt het voor je uit. Het wilde dier staat op het punt om aan te vallen. Je dreigt met het mes uit te halen maar het dier trekt zich er niets van aan. ${br} Er ontstaat een soort “minigame” tussen jou en het wilde dier. Je moet proberen om met de linker en de rechter pijltjestoets het dier zo vaak mogelijk te ontwijken. Door de adrenaline lukt het je niet om goed te zien wat het dier doet. Je moet zo snel en zo veel mogelijk op de pijltjes drukken. ${br} Druk op de knop om de minigame te starten.`;
+var level5_action1 = `Je haalt haastig het zakmes uit je zak en steekt het voor je uit. Het wilde dier staat op het punt om aan te vallen. Je dreigt met het mes uit te halen maar het dier trekt zich er niets van aan. ${br} Er ontstaat een soort “minigame” tussen jou en het wilde dier. Je moet proberen om door middel van het zo snel en zo vaak mogelijk op de spatiebalk te drukken, het dier zo veel mogelijk te ontwijken. Door de adrenaline lukt het je niet om goed te zien wat het dier doet. ${br} Druk op de knop om de minigame te starten.`;
 
-var level5_minigame = `De score wat je behaald is op basis van het aantal slagen per minuut. Je moet een minuut lang zo veel mogelijk op de pijltjestoetsen drukken. Als je meer dan 50 slagen hebt behaald, dan heb je de minigame gewonnen en het dier verwond. Als je minder dan 50 slagen hebt behaald, dan heb je de minigame verloren en heeft het wilde dier jou met succes aangevallen.`;
+var level5_minigame = `De score wat je behaald is op basis van hoe vaak je op de toets gedrukt hebt. Je moet 10 seconden lang zo veel mogelijk op de spatiebalk drukken. Als je meer dan 50 slagen hebt behaald, dan heb je de minigame gewonnen en het dier verwond. Als je minder dan 50 slagen hebt behaald, dan heb je de minigame verloren en heeft het wilde dier jou met succes aangevallen. ${br} Veel succes!`;
+
+var level5_minigameWin = `Je hebt het wilde dier verslagen! ${br} Ga door naar het volgende level.`;
+var level5_minigameLose = `Het wilde dier was jou te snel af en je hebt van hem verloren!`;
 
 // de sleutel
 var level5_action2 = `Je haalt haastig de sleutel uit je zak. “Verdomme, had ik nu maar dat mes meegenomen!” ${br} Het wilde dier valt je aan.`;
