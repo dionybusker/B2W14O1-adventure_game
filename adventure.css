@@ -84,8 +84,8 @@ body {
 
 /* CUSTOM SCROLLBAR */
 /* width */
-::-webkit-scrollbar { width: 7px; }
+#description::-webkit-scrollbar { width: 7px; }
 /* track */
-::-webkit-scrollbar-thumb { background: #888; } /* #213f73 */
+#description::-webkit-scrollbar-thumb { background: #888; } /* #213f73 */
 /* handle on hover */
-::-webkit-scrollbar-thumb:hover { background: #555; } /* #2f5496 */
+#description::-webkit-scrollbar-thumb:hover { background: #555; } /* #2f5496 */
