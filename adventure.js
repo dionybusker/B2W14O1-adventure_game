@@ -623,3 +623,18 @@ function level_10() {
     button2.onclick = action2;
     button3.onclick = action3;
 }
+
+
+// enable/disable key
+// http://talkerscode.com/webtricks/enable-and-disable-keyboard-keys-using-javascript.php
+function disableKey() {
+    document.onkeydown = function() {
+        return false;
+    }
+}
+
+function enableKey() {
+    document.onkeydown = function() {
+        return true;
+    }
+}
