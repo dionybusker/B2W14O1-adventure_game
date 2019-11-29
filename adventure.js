@@ -5,6 +5,13 @@ script.src = "story.js";
 
 ref.parentNode.insertBefore(script, ref);
 
+// minigame
+var ref = document.getElementsByTagName("script")[0];
+var script = document.createElement("script");
+script.src = "minigame.js";
+
+ref.parentNode.insertBefore(script, ref);
+
 // titel van de pagina wordt aangepast
 document.title = "Area 51 ½ - prequel";
 
@@ -300,7 +307,7 @@ function level_4() {
 }
 
 
-function level_3() {
+function level_5() {
     var levelTitle = document.getElementById("level");
     levelTitle.innerText = "Level 5 - wild animal attack";
     levelImage.src = "img/level_5-wild_animal_attack.jpg";
@@ -319,10 +326,11 @@ function level_3() {
 
         story.innerText = level5_action1;
 
-        button1.innerText = next;
-        button1.onclick = level_6;
+        button1.innerText = game;
+        button1.onclick = minigame;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
+
     }
 
     function action2() {
