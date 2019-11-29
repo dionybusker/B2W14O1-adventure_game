@@ -1,6 +1,4 @@
-// left arrow key = 37
-// right arrow key = 39
-// space key = 32
+// als de timer op 0 staat en je nog een keer op de spatiebalk druk, verdwijnt alle tekst
 
 var ref = document.getElementsByTagName("script")[0];
 var script = document.createElement("script");
@@ -25,10 +23,10 @@ function minigame() {
     var can_click = true;
 
     var count_clicks = 0;
-    function myInterval(i) {
+    function myInterval(sec) {
         var interval = setInterval(function(){startInterval()}, 1000);
         function startInterval() {
-            if (i <= 0) {
+            if (sec <= 0) {
                 clearInterval(interval);
                 can_click = false;
                 story.innerText = "Aantal keer geklikt: " + count_clicks;
@@ -45,8 +43,8 @@ function minigame() {
                 }
             } else {
                 can_click = true;
-                i--;
-                $(levelTitle).text(i);
+                sec--;
+                $(levelTitle).text(sec);
             }
         }
     }
