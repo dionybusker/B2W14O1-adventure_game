@@ -91,10 +91,28 @@ footer.style.fontSize = "12px";
 // mobile = false (telefoon staat uit) , mobile = true (telefoon staat aan)
 var items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
 
+// var items = [
+//     {"berries" : false, image : "img/item-bessen.png"},
+//     {"knife" : false, image : "img/item-zakmes.png"},
+//     {"key" : false, image : "img/item-sleutel.png"},
+//     {"weapon" : false, image : "img/item-wapen.jpg"}
+// ];
+
+
 // var berries;
 // berries.src = "img/item-bessen.png";
 // var knife;
 // knife.src = "img/item-zakmes.png";
+
+
+// var itemImage = {
+//     function (itemIMG) {
+//         // image = "img/item-bessen.png";
+//         var img = document.createElement("img");
+//         img.src = itemIMG.image;
+//         gameContainer.appendChild(img);
+//     }
+// }
 
 
 // FUNCTIES
@@ -310,28 +328,34 @@ function level_4() {
         button3.style.visibility = "hidden";
 
         items["knife"] = true;
+        // items["berries"] = true;
 
         console.log(items);
 
         if (items["berries"] == true) {
             var invItem2 = document.createElement("img");
+            gameContainer.appendChild(invItem2);
             items["knife"] = new Image();
             items["knife"].src = "img/item-zakmes.png";
     
             // inventory.style.visibility = "visible";
             invItem2.style.width = "auto";
             invItem2.style.height = "50px";
+            invItem2.style.gridArea = "item";
+            invItem2.style.position = "relative";
+            invItem2.style.top = "75px";
 
             invItem2.src = items["knife"].src;
         } else {
-            items["knife"] = new Image();
-            items["knife"].src = "img/item-zakmes.png";
+            alert("de if werkt niet :) ")
+            // items["knife"] = new Image();
+            // items["knife"].src = "img/item-zakmes.png";
 
-            inventory.style.visibility = "visible";
-            inventory.style.width = "auto";
-            inventory.style.height = "50px";
+            // inventory.style.visibility = "visible";
+            // inventory.style.width = "auto";
+            // inventory.style.height = "50px";
 
-            inventory.src = items["knife"].src;
+            // inventory.src = items["knife"].src;
         }
 
 
