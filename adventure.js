@@ -22,7 +22,7 @@ var story = document.getElementById("description");
 var button1 = document.getElementById("button1");
 var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
-var item = document.getElementById("inventoryItem");
+var inventory = document.getElementById("inventoryItem");
 // var levelTitle = document.getElementById("level");
 
 
@@ -59,23 +59,23 @@ level.style.margin = "0";
 level.id += "level";
 
 // element h3 wordt aangemaakt, hier komt de inventory
-var inventory = document.createElement("h3");
-gameContainer.appendChild(inventory);
+var inventoryTitle = document.createElement("h3");
+gameContainer.appendChild(inventoryTitle);
 // tekst wordt toegevoegd
-inventory.innerText = "Rugzak";
+inventoryTitle.innerText = "Rugzak";
 // styling van element h3, hier komt de inventory
-inventory.style.gridArea = "inventory";
-inventory.style.padding = "10px";
-inventory.style.margin = "0";
-inventory.style.height = "30px";
+inventoryTitle.style.gridArea = "inventory";
+inventoryTitle.style.padding = "10px";
+inventoryTitle.style.margin = "0";
+inventoryTitle.style.height = "30px";
 
 
 // // afbeelding toevoegen aan item
 // item.src = "img/item-sleutel.png";
 // // styling van de afbeelding van item
 
-item.style.paddingTop = "10px";
-item.style.visibility = "hidden";
+inventory.style.paddingTop = "10px";
+inventory.style.visibility = "hidden";
 
 // het element footer wordt aangemaakt
 var footer = document.createElement("footer");
@@ -86,6 +86,15 @@ footer.innerText = "© Diony Busker, 2019";
 footer.style.gridArea = "footer";
 footer.style.margin = "5px auto";
 footer.style.fontSize = "12px";
+
+
+// mobile = false (telefoon staat uit) , mobile = true (telefoon staat aan)
+var items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
+
+// var berries;
+// berries.src = "img/item-bessen.png";
+// var knife;
+// knife.src = "img/item-zakmes.png";
 
 
 // FUNCTIES
@@ -255,6 +264,19 @@ function level_3() {
         button1.onclick = level_4;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
+
+        items["berries"] = true;
+
+        console.log(items);
+
+        items["berries"] = new Image();
+        items["berries"].src = "img/item-bessen.png";
+
+        inventory.style.visibility = "visible";
+        inventory.style.width = "auto";
+        inventory.style.height = "50px";
+
+        inventory.src = items["berries"].src;
     }
 
     button1.onclick = action1;
@@ -286,6 +308,33 @@ function level_4() {
         button1.onclick = level_5;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
+
+        items["knife"] = true;
+
+        console.log(items);
+
+        if (items["berries"] == true) {
+            var invItem2 = document.createElement("img");
+            items["knife"] = new Image();
+            items["knife"].src = "img/item-zakmes.png";
+    
+            // inventory.style.visibility = "visible";
+            invItem2.style.width = "auto";
+            invItem2.style.height = "50px";
+
+            invItem2.src = items["knife"].src;
+        } else {
+            items["knife"] = new Image();
+            items["knife"].src = "img/item-zakmes.png";
+
+            inventory.style.visibility = "visible";
+            inventory.style.width = "auto";
+            inventory.style.height = "50px";
+
+            inventory.src = items["knife"].src;
+        }
+
+
     }
 
     function action2() {
