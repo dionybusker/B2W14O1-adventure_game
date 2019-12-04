@@ -133,6 +133,9 @@ function start() {
     story.innerText = intro;
 
     button1.addEventListener("click", level_1, {once: true});
+
+    items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
+    // inventory.style.visibility = "hidden";
 }
 
 function level_1() {
@@ -191,10 +194,10 @@ function level_2() {
     function action1() {
         level.innerText = "Jullie gaan naar links";
 
-        story.innerText = level2_action1;
+        story.innerText = level2_action1 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -216,10 +219,10 @@ function level_2() {
     function action3() {
         level.innerText = "Jullie gaan naar rechts";
 
-        story.innerText = level2_action3;
+        story.innerText = level2_action3 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -251,10 +254,10 @@ function level_3() {
     function action1() {
         level.innerText = "Je neemt een handje";
 
-        story.innerText = level3_action1;
+        story.innerText = level3_action1 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -283,7 +286,7 @@ function level_3() {
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
-        items["berries"] = true;
+        // items["berries"] = true;
 
         console.log(items);
 
@@ -295,6 +298,8 @@ function level_3() {
         inventory.style.height = "50px";
 
         inventory.src = items["berries"].src;
+
+        items["berries"] = true;
     }
 
     button1.onclick = action1;
@@ -327,38 +332,35 @@ function level_4() {
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
-        items["knife"] = true;
-        // items["berries"] = true;
+        // items["knife"] = true;
 
         console.log(items);
 
         if (items["berries"] == true) {
-            var invItem2 = document.createElement("img");
-            gameContainer.appendChild(invItem2);
+            var itemKnife = document.createElement("img");
+            gameContainer.appendChild(itemKnife);
             items["knife"] = new Image();
             items["knife"].src = "img/item-zakmes.png";
     
-            // inventory.style.visibility = "visible";
-            invItem2.style.width = "auto";
-            invItem2.style.height = "50px";
-            invItem2.style.gridArea = "item";
-            invItem2.style.position = "relative";
-            invItem2.style.top = "75px";
+            itemKnife.style.width = "auto";
+            itemKnife.style.height = "50px";
+            itemKnife.style.gridArea = "item";
+            itemKnife.style.position = "relative";
+            itemKnife.style.top = "75px";
 
-            invItem2.src = items["knife"].src;
+            itemKnife.src = items["knife"].src;
         } else {
-            alert("de if werkt niet :) ")
-            // items["knife"] = new Image();
-            // items["knife"].src = "img/item-zakmes.png";
+            items["knife"] = new Image();
+            items["knife"].src = "img/item-zakmes.png";
 
-            // inventory.style.visibility = "visible";
-            // inventory.style.width = "auto";
-            // inventory.style.height = "50px";
+            inventory.style.visibility = "visible";
+            inventory.style.width = "auto";
+            inventory.style.height = "50px";
 
-            // inventory.src = items["knife"].src;
+            inventory.src = items["knife"].src;
         }
 
-
+        items["knife"] = true;
     }
 
     function action2() {
@@ -366,13 +368,36 @@ function level_4() {
 
         story.innerText = level4_action2;
 
-        button1.innerText = dead;
-        button1.onclick = start;
+        button1.innerText = next;
+        button1.onclick = level_5;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
-        button1.style.backgroundColor = "#CC0E00";
-        levelImage.style.filter = "grayscale(100%)";
+        if (items["berries"] == true) {
+            var itemKey = document.createElement("img");
+            gameContainer.appendChild(itemKey);
+            items["key"] = new Image();
+            items["key"].src = "img/item-sleutel.png";
+    
+            itemKey.style.width = "auto";
+            itemKey.style.height = "25px";
+            itemKey.style.gridArea = "item";
+            itemKey.style.position = "relative";
+            itemKey.style.top = "75px";
+
+            itemKey.src = items["key"].src;
+        } else {
+            items["key"] = new Image();
+            items["key"].src = "img/item-sleutel.png";
+
+            inventory.style.visibility = "visible";
+            inventory.style.width = "auto";
+            inventory.style.height = "25px";
+
+            inventory.src = items["key"].src;
+        }
+
+        items["key"] = true;
     }
 
     button1.onclick = action1;
@@ -393,31 +418,53 @@ function level_5() {
 
     button1.innerText = "Het zakmes";
     button2.innerText = "De sleutel";
-    
-    function action1() {
-        level.innerText = "Het zakmes";
 
-        story.innerText = level5_action1;
 
-        button1.innerText = game;
-        button1.onclick = minigame;
-        button2.style.visibility = "hidden";
-        button3.style.visibility = "hidden";
+    if (items["knife"] == true) {
+        function action1() {
+            level.innerText = "Het zakmes";
 
+            story.innerText = level5_action1;
+
+            button1.innerText = game;
+            button1.onclick = minigame;
+            button2.style.visibility = "hidden";
+            button3.style.visibility = "hidden";
+        }
+    } else {
+        button1.style.backgroundColor = "black";
+        // button1.style.cursor = "default";
+        // button1.onmouseover = function() {
+        //     alert("Je hebt geen zakmes! \nGebruik de sleutel.");
+        // }
+        button1.onclick = function() {
+            return false;
+        }
     }
 
-    function action2() {
-        level.innerText = "De sleutel";
+    if (items["key"] == true) {
+        function action2() {
+            level.innerText = "De sleutel";
 
-        story.innerText = level5_action2;
+            story.innerText = level5_action2 + newGame;
 
-        button1.innerText = dead;
-        button1.onclick = start;
-        button2.style.visibility = "hidden";
-        button3.style.visibility = "hidden";
+            button1.innerText = dead;
+            button1.onclick = refreshPage;
+            button2.style.visibility = "hidden";
+            button3.style.visibility = "hidden";
 
-        button1.style.backgroundColor = "#CC0E00";
-        levelImage.style.filter = "grayscale(100%)";
+            button1.style.backgroundColor = "#CC0E00";
+            levelImage.style.filter = "grayscale(100%)";
+        }
+    } else {
+        button2.style.backgroundColor = "black";
+        // button2.style.cursor = "default";
+        // button2.onmouseover = function() {
+        //     alert("Je hebt geen sleutel! \nGebruik het zakmes.");
+        // }
+        button2.onclick = function() {
+            return false;
+        }
     }
 
     button1.onclick = action1;
@@ -432,6 +479,10 @@ function level_6() {
 
     story.innerText = levelSix;
 
+    button2.style.cursor = "pointer";
+    // button1.removeEventListener("onmouseover", level_5(), false);
+    // button2.removeEventListener("onmouseover", level_5(), false);
+
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
     button3.style.visibility = "visible";
@@ -443,10 +494,10 @@ function level_6() {
     function action1() {
         level.innerText = "Je doet wat hij zegt";
 
-        story.innerText = level6_action1;
+        story.innerText = level6_action1 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -468,10 +519,10 @@ function level_6() {
     function action3() {
         level.innerText = "Je spreekt hem tegen";
 
-        story.innerText = level6_action3;
+        story.innerText = level6_action3 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -502,10 +553,10 @@ function level_7() {
     function action1() {
         level.innerText = "Haal de trekker over";
 
-        story.innerText = level7_action1;
+        story.innerText = level7_action1 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -547,10 +598,10 @@ function level_8() {
     function action1() {
         level.innerText = "Leg de voorwerpen neer";
 
-        story.innerText = level8_action1;
+        story.innerText = level8_action1 + newGame;
 
         button1.innerText = win;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -603,10 +654,10 @@ function level_9() {
     function action1() {
         level.innerText = "Maak de student wakker";
 
-        story.innerText = level9_action1;
+        story.innerText = level9_action1 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -617,10 +668,10 @@ function level_9() {
     function action2() {
         level.innerText = "Maak de gijzelaar wakker";
 
-        story.innerText = level9_action2;
+        story.innerText = level9_action2 + newGame;
 
         button1.innerText = dead;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
@@ -662,10 +713,10 @@ function level_10() {
     function action1() {
         level.innerText = "Vraag om eten";
 
-        story.innerText = level10_action1;
+        story.innerText = level10_action1 + newGame;
 
         button1.innerText = tbc;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
     }
@@ -673,10 +724,10 @@ function level_10() {
     function action2() {
         level.innerText = "Bel de hulplijnen";
 
-        story.innerText = level10_action2;
+        story.innerText = level10_action2 + newGame;
 
         button1.innerText = tbc;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
     }
@@ -684,10 +735,10 @@ function level_10() {
     function action3() {
         level.innerText = "Zoek naar de uitgang";
 
-        story.innerText = level10_action3;
+        story.innerText = level10_action3 + newGame;
 
         button1.innerText = tbc;
-        button1.onclick = start;
+        button1.onclick = refreshPage;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
     }
@@ -710,4 +761,8 @@ function enableKey() {
     document.onkeydown = function() {
         return true;
     }
+}
+
+function refreshPage() {
+    window.location.reload();
 }
