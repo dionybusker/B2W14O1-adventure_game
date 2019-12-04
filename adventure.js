@@ -233,6 +233,9 @@ function level_2() {
     button1.onclick = action1;
     button2.onclick = action2;
     button3.onclick = action3;
+
+    button1.addEventListener("click", loseAudio);
+    button3.addEventListener("click", loseAudio);
 }
 
 
@@ -242,6 +245,9 @@ function level_3() {
     levelImage.src = "img/level_3-bessenstruik.jpg"
 
     story.innerText = levelThree;
+
+    button1.removeEventListener("click", loseAudio);
+    button3.removeEventListener("click", loseAudio);
 
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
@@ -305,6 +311,8 @@ function level_3() {
     button1.onclick = action1;
     button2.onclick = action2;
     button3.onclick = action3;
+
+    button1.addEventListener("click", loseAudio);
 }
 
 
@@ -314,6 +322,8 @@ function level_4() {
     levelImage.src = "img/level_4-leven_of_dood.png";
 
     story.innerText = levelFour;
+
+    button1.removeEventListener("click", loseAudio);
 
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
@@ -469,6 +479,8 @@ function level_5() {
 
     button1.onclick = action1;
     button2.onclick = action2;
+
+    button2.addEventListener("click", loseAudio);
 }
 
 
@@ -478,6 +490,8 @@ function level_6() {
     levelImage.src = "img/level_6-verboden_toegang.jpg";
 
     story.innerText = levelSix;
+
+    button2.removeEventListener("click", loseAudio);
 
     button2.style.cursor = "pointer";
     button2.style.backgroundColor = "#2f5496";
@@ -534,6 +548,9 @@ function level_6() {
     button1.onclick = action1;
     button2.onclick = action2;
     button3.onclick = action3;
+
+    button1.addEventListener("click", loseAudio);
+    button3.addEventListener("click", loseAudio);
 }
 
 
@@ -543,6 +560,9 @@ function level_7() {
     levelImage.src = "img/level_7-verlaten_huisje.jpg"
 
     story.innerText = levelSeven;
+
+    button1.removeEventListener("click", loseAudio);
+    button3.removeEventListener("click", loseAudio);
 
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
@@ -579,6 +599,8 @@ function level_7() {
 
     button1.onclick = action1;
     button2.onclick = action2;
+
+    button1.addEventListener("click", loseAudio);
 }
 
 function level7_action2_ch1() { // meenemen
@@ -587,6 +609,8 @@ function level7_action2_ch1() { // meenemen
     button1.onclick = level_8;
     button2.style.visibility = "hidden";
     button3.style.visibility = "hidden";
+
+    button1.removeEventListener("click", loseAudio);
 
     if (items["berries"] == false && items["knife"] == true) {
         var itemWeapon = document.createElement("img");
@@ -702,6 +726,9 @@ function level_8() {
     button1.onclick = action1;
     button2.onclick = action2;
     button3.onclick = action3;
+
+    button1.addEventListener("click", winAudio);
+
 }
 
 
@@ -711,6 +738,8 @@ function level_9() {
     levelImage.src = "img/level_9-lege_kamer.jpg"
 
     story.innerText = levelNine;
+
+    button1.removeEventListener("click", winAudio);
 
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
@@ -761,6 +790,9 @@ function level_9() {
     button1.onclick = action1;
     button2.onclick = action2;
     button3.onclick = action3;
+
+    button1.addEventListener("click", loseAudio);
+    button2.addEventListener("click", loseAudio);
 }
 
 
@@ -819,7 +851,6 @@ function level_10() {
 
 
 // enable/disable key
-// http://talkerscode.com/webtricks/enable-and-disable-keyboard-keys-using-javascript.php
 function disableKey() {
     document.onkeydown = function() {
         return false;
@@ -832,6 +863,27 @@ function enableKey() {
     }
 }
 
+// pagina verversen
 function refreshPage() {
     window.location.reload();
+}
+
+// audio toevoegen, faal eind
+var audio = document.createElement("audio");
+gameContainer.appendChild(audio);
+audio.setAttribute("id", "lose");
+audio.setAttribute("src", "audio/wilhelm_scream.mp3");
+
+function loseAudio() {
+    lose.play();
+}
+
+// audio toevoegen, win eind
+var audio = document.createElement("audio");
+gameContainer.appendChild(audio);
+audio.setAttribute("id", "win");
+audio.setAttribute("src", "audio/applause.mp3");
+
+function winAudio() {
+    win.play();
 }
