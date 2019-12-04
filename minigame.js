@@ -38,6 +38,9 @@ function level_5_minigame() {
                 } else {
                     story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameLose} ${newGame}`
                     button1.innerText = dead;
+
+                    // button1.addEventListener("click", loseAudio);
+
                     button1.onclick = refreshPage;
                     button1.style.backgroundColor = "#CC0E00";
                     levelImage.style.filter = "grayscale(100%)";
@@ -73,8 +76,6 @@ function level_9_minigame() {
 
     button1.innerText = "Submit";
 
-    // input.setAttribute("type", "text");
-
     function action() {
         if (input.value > 0 && input.value <= 15) {
             story.innerText = level9_minigameWin;
@@ -92,6 +93,4 @@ function level_9_minigame() {
 
     button1.onclick = action;
 
-
-    
 }
