@@ -803,6 +803,9 @@ function level_10() {
 
     story.innerText = levelTen;
 
+    button1.removeEventListener("click", loseAudio);
+    button2.removeEventListener("click", loseAudio);
+
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
     button3.style.visibility = "visible";
