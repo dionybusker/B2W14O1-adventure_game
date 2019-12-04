@@ -9,7 +9,7 @@ ref.parentNode.insertBefore(script, ref);
 
 var levelTitle = document.getElementById("level");
 
-function level5_minigame() {
+function level_5_minigame() {
 
     document.onkeyup = function(arrowkey) {
         if (arrowkey.keyCode == 32) {
@@ -59,6 +59,41 @@ function level5_minigame() {
             myInterval(3);
         }
    }
+}
 
 
+function level_9_minigame() {
+    story.innerText = level9_minigame + br;
+
+    var input = document.createElement("input");
+    story.appendChild(input);
+
+    input.setAttribute("id", "number")
+    input = document.getElementById("number").value;
+
+    button1.innerText = "Submit";
+
+    // input.setAttribute("type", "text");
+
+    // function action() {
+        if (input <= 15) {
+            story.innerText = level9_minigameWin;
+            button1.onclick = level_10;
+            button1.innerText = next;
+        } else if (input > 15) {
+            story.innerText = level9_minigameLose + br;
+            button1.innerText = dead;
+            button1.onclick = refreshPage;
+
+            button1.style.backgroundColor = "#CC0E00";
+            levelImage.style.filter = "grayscale(100%)";
+        } else if (isNan(input)) {
+            alert("Vul een getal in.");
+        }
+    // }
+
+    // button1.onclick = action;
+
+
+    
 }

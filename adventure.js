@@ -427,7 +427,7 @@ function level_5() {
             story.innerText = level5_action1;
 
             button1.innerText = game;
-            button1.onclick = level5_minigame;
+            button1.onclick = level_5_minigame;
             button2.style.visibility = "hidden";
             button3.style.visibility = "hidden";
         }
@@ -752,8 +752,8 @@ function level_9() {
 
         story.innerText = level9_action3;
 
-        button1.innerText = next;
-        button1.onclick = level_10;
+        button1.innerText = game;
+        button1.onclick = level_9_minigame;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
     }

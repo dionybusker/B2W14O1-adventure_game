@@ -139,6 +139,10 @@ var level9_minigame = `Vul een getal in hoeveel minuten je wilt wachten.`;
     Je hebt te lang gewacht! Er komen mannen binnen die je een spuit geven. Alles wordt zwart.
 */
 
+var level9_minigameWin = `Je loopt naar de deur en duwt er hard tegenaan. De deur vliegt open en je rent naar buiten. `;
+
+var level9_minigameLose = `Je hebt te lang gewacht! Er komen mannen binnen die je een spuit geven. Alles wordt zwart.`;
+
 
 // vraag om eten
 var level10_action1 = `Je loopt naar één van de deuren waar het licht onder door schijnt. Je draait de knop om en de deur gaat open. Er staat een mevrouw binnen met enkele reageerbuisjes in de hand. Ze kijkt je aan en een schijnheilige glimlach verschijnt op haar gezicht. De mevrouw schenkt de vloeistof vanuit het ene reageerbuisje in het andere. Ze doet een masker op en je begint je draaierig te voelen. De mevrouw loopt naar je toe en sluit de deur achter je. Je zakt naar de grond.`;
