@@ -36,8 +36,9 @@ function minigame() {
                     button1.innerText = next;
                     button1.onclick = level_6;
                 } else {
-                    story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameLose}`
+                    story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameLose} ${newGame}`
                     button1.innerText = dead;
+                    button1.onclick = refreshPage;
                     button1.style.backgroundColor = "#CC0E00";
                     levelImage.style.filter = "grayscale(100%)";
                 }
