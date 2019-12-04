@@ -9,7 +9,7 @@ ref.parentNode.insertBefore(script, ref);
 
 var levelTitle = document.getElementById("level");
 
-function minigame() {
+function level5_minigame() {
 
     document.onkeyup = function(arrowkey) {
         if (arrowkey.keyCode == 32) {
