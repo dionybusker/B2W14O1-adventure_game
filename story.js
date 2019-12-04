@@ -4,6 +4,7 @@ var game = "MINI GAME";
 var dead = "GAME OVER!";
 var win = "GEWONNEN!";
 var tbc = "WORDT VERVOLGD..."; // to be continued
+var newGame = `${br} Wil je nog een keer spelen? Druk dan op de knop voor een nieuw spel!`;
 
 
 
