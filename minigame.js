@@ -31,7 +31,7 @@ function minigame() {
                 can_click = false;
                 story.innerText = "Aantal keer geklikt: " + count_clicks;
 
-                if (count_clicks >= 50) {
+                if (count_clicks >= 3) {
                     story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameWin}`
                     button1.innerText = next;
                     button1.onclick = level_6;
@@ -56,7 +56,7 @@ function minigame() {
         }
         $(story).text(count_clicks);
         if (count_clicks == 1) {
-            myInterval(11);
+            myInterval(3);
         }
    }
 

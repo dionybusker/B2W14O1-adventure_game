@@ -480,6 +480,7 @@ function level_6() {
     story.innerText = levelSix;
 
     button2.style.cursor = "pointer";
+    button2.style.backgroundColor = "#2f5496";
     // button1.removeEventListener("onmouseover", level_5(), false);
     // button2.removeEventListener("onmouseover", level_5(), false);
 
@@ -569,14 +570,61 @@ function level_7() {
 
         story.innerText = level7_action2;
 
-        button1.innerText = next;
-        button1.onclick = level_8;
-        button2.style.visibility = "hidden";
+        button1.innerText = "Meenemen";
+        button2.innerText = "Laten liggen";
+        button1.onclick = level7_action2_ch1;
+        button2.onclick = level7_action2_ch2;
         button3.style.visibility = "hidden";
     }
 
     button1.onclick = action1;
     button2.onclick = action2;
+}
+
+function level7_action2_ch1() { // meenemen
+    story.innerText = level7_action2_1;
+    button1.innerText = next;
+    button1.onclick = level_8;
+    button2.style.visibility = "hidden";
+    button3.style.visibility = "hidden";
+
+    if (items["berries"] == false && items["knife"] == true) {
+        var itemWeapon = document.createElement("img");
+        gameContainer.appendChild(itemWeapon);
+        items["weapon"] = new Image();
+        items["weapon"].src = "img/item-wapen.jpg";
+
+        itemWeapon.style.width = "auto";
+        itemWeapon.style.height = "50px";
+        itemWeapon.style.gridArea = "item";
+        itemWeapon.style.position = "relative";
+        itemWeapon.style.top = "75px";
+
+        itemWeapon.src = items["weapon"].src;
+    } else if (items["berries"] == true && items["knife"] == true) {
+        var itemWeapon = document.createElement("img");
+        gameContainer.appendChild(itemWeapon);
+        items["weapon"] = new Image();
+        items["weapon"].src = "img/item-wapen.jpg";
+
+        itemWeapon.style.width = "auto";
+        itemWeapon.style.height = "50px";
+        itemWeapon.style.gridArea = "item";
+        itemWeapon.style.position = "relative";
+        itemWeapon.style.left = "100px";
+
+        itemWeapon.src = items["weapon"].src;
+    }
+
+    items["weapon"] = true;
+}
+
+function level7_action2_ch2() { // laten liggen
+    story.innerText = level7_action2_2;
+    button1.innerText = next;
+    button1.onclick = level_8;
+    button2.style.visibility = "hidden";
+    button3.style.visibility = "hidden";
 }
 
 
@@ -593,7 +641,15 @@ function level_8() {
 
     button1.innerText = "Leg de voorwerpen neer";
     button2.innerText = "Negeer de brief";
-    button3.innerText = "Je hebt geen bessen...";
+
+    if (items["berries"] == false) {
+        button3.innerText = "Je hebt geen bessen...";
+    } else if (items["weapon"] == false) {
+        button3.innerText = "Je hebt geen wapen...";
+    } else if (items["berries"] == false && items["weapon"] == false) {
+        button3.innerText = "Je mist meerdere items...";
+    }
+
     
     function action1() {
         level.innerText = "Leg de voorwerpen neer";
