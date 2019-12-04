@@ -427,7 +427,7 @@ function level_5() {
             story.innerText = level5_action1;
 
             button1.innerText = game;
-            button1.onclick = minigame;
+            button1.onclick = level5_minigame;
             button2.style.visibility = "hidden";
             button3.style.visibility = "hidden";
         }
@@ -592,7 +592,7 @@ function level7_action2_ch1() { // meenemen
         var itemWeapon = document.createElement("img");
         gameContainer.appendChild(itemWeapon);
         items["weapon"] = new Image();
-        items["weapon"].src = "img/item-wapen.jpg";
+        items["weapon"].src = "img/item-wapen.png";
 
         itemWeapon.style.width = "auto";
         itemWeapon.style.height = "50px";
@@ -605,7 +605,7 @@ function level7_action2_ch1() { // meenemen
         var itemWeapon = document.createElement("img");
         gameContainer.appendChild(itemWeapon);
         items["weapon"] = new Image();
-        items["weapon"].src = "img/item-wapen.jpg";
+        items["weapon"].src = "img/item-wapen.png";
 
         itemWeapon.style.width = "auto";
         itemWeapon.style.height = "50px";
@@ -642,15 +642,20 @@ function level_8() {
     button1.innerText = "Leg de voorwerpen neer";
     button2.innerText = "Negeer de brief";
 
-    if (items["berries"] == false) {
-        button3.innerText = "Je hebt geen bessen...";
-    } else if (items["weapon"] == false) {
-        button3.innerText = "Je hebt geen wapen...";
-    } else if (items["berries"] == false && items["weapon"] == false) {
-        button3.innerText = "Je mist meerdere items...";
+    if (items["berries"] == true && items["knife"] == true && items["weapon"] == true) {
+        button3.style.visibility = "hidden";
+    }
+    
+    if (items["berries"] == false || items["knife"] == false || items["weapon"] == false) {
+        if (items["berries"] == false && items["weapon"] == true) {
+            button3.innerText = "Je hebt geen bessen...";
+        } else if (items["berries"] == true && items["weapon"] == false) {
+            button3.innerText = "Je hebt geen wapen...";
+        } else if (items["berries"] == false && items["weapon"] == false) {
+            button3.innerText = "Je mist meerdere items...";
+        }
     }
 
-    
     function action1() {
         level.innerText = "Leg de voorwerpen neer";
 
@@ -676,7 +681,15 @@ function level_8() {
     }
 
     function action3() {
-        level.innerText = "Je hebt geen bessen...";
+        if (items["berries"] == false || items["knife"] == false || items["weapon"] == false) {
+            if (items["berries"] == false && items["weapon"] == true) {
+                level.innerText = "Je hebt geen bessen...";
+            } else if (items["berries"] == true && items["weapon"] == false) {
+                level.innerText = "Je hebt geen wapen...";
+            } else if (items["berries"] == false && items["weapon"] == false) {
+                level.innerText = "Je mist meerdere items...";
+            }
+        }
 
         story.innerText = level8_action3;
 
