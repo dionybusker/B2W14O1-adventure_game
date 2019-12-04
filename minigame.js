@@ -69,30 +69,28 @@ function level_9_minigame() {
     story.appendChild(input);
 
     input.setAttribute("id", "number")
-    input = document.getElementById("number").value;
+    input = document.getElementById("number");
 
     button1.innerText = "Submit";
 
     // input.setAttribute("type", "text");
 
-    // function action() {
-        if (input <= 15) {
+    function action() {
+        if (input.value > 0 && input.value <= 15) {
             story.innerText = level9_minigameWin;
             button1.onclick = level_10;
             button1.innerText = next;
-        } else if (input > 15) {
+        } else if (input.value > 15) {
             story.innerText = level9_minigameLose + br;
             button1.innerText = dead;
             button1.onclick = refreshPage;
 
             button1.style.backgroundColor = "#CC0E00";
             levelImage.style.filter = "grayscale(100%)";
-        } else if (isNan(input)) {
-            alert("Vul een getal in.");
         }
-    // }
+    }
 
-    // button1.onclick = action;
+    button1.onclick = action;
 
 
     
