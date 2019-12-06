@@ -7,7 +7,6 @@ var tbc = "WORDT VERVOLGD..."; // to be continued
 var newGame = `${br} Wil je nog een keer spelen? Druk dan op de knop voor een nieuw spel!`;
 
 
-
 // VERHAAL
 // start
 var intro = `Vandaag is het de dag, de dag waar jij je zo lang op hebt verheugd. Samen met je klas ga je op excursie naar een zeer bekend terrein dat echter niemand dan behalve de militaire basis ooit heeft mogen betreden. Gelukkig hebben jullie een docent die dit heeft kunnen regelen. ${br} Het terrein dat jullie gaan bezoeken ligt ver in het noorden van het land. Het is een groot, ongebruikt gebied. Zeggen ze… De militaire basis ligt ver verstopt tussen de bossen die er om heen staan. Een goede plek dus om geheimzinnige projecten uit te voeren. En misschien dat jullie de kans krijgen om één van deze projecten te mogen bekijken… ${br} De excursie naar Area 51 ½ is verplicht voor iedere student uit de klas A1. De bussen staan al klaar op de parkeerplaats en je staat te springen om eindelijk te kunnen vertrekken. Dus waar wacht je nog op?`;
@@ -41,8 +40,6 @@ var levelNine = `“Dit is nog niet het einde…” ${br} Je wordt wakker met zw
 
 // level 10 - lange gangen
 var levelTen = `Je hebt een heel stuk door de gangen gerend en je bent buiten adem. Je besluit even stil te staan en te wachten om op adem te komen. Als je opkijkt zie je een lange gang met allemaal deuren. Onder enkele deuren zie je licht branden. Hier moet je zo dan zo stil mogelijk langs zien te lopen. Je maag begint te knorren en je voelt je wat licht in het hoofd. Je hebt al in geen tijden meer gegeten, lijkt het. Je zou het kunnen wagen om bij een deur te stoppen en daar te vragen of iemand wat te eten heeft. Het zou een stomme actie zijn, maar niet geschoten is altijd mis. Je herinnert je dat je ook nog je mobiel bij je hebt. Deze heb je nog je in je zak zitten. Je kan het aanzetten en de hulplijnen bellen. Maar is dat wel zo verstandig? Je kan natuurlijk altijd voorzicht door lopen tot je ergens een uitgang vindt. Maar hoe lang zou dat nog duren...?`;
-
-
 
 
 // ACTIES-GEVOLGEN
@@ -152,6 +149,5 @@ var level10_action2 = `Je neemt je telefoon uit je zak en wilt de hulplijnen bel
 
 // zoek naar de uitgang
 var level10_action3 = `Je wisselt het lopen en rennen af door de gang. Bij de deuren waar licht onder door schijnt, loop je. Als er geen licht is, of als er geen deuren zijn dan ren je. Je blijft voortgang maken door de gang. De ene keer neem je de bocht naar links, dan de bocht naar rechts. Er lijkt geen einde te komen aan deze gang. Je gedachten over thuis en school en deze excursie laten je afleiden van het oneindig door rennen. Je voelt je zwakker worden, je ogen worden wazig door de tranen in je ooghoeken. ${br} En nog voor je het in de gaten hebt, wordt er een deur voor je neus open geslagen waar je hard tegenop botst. Je zakt naar de grond.`;
-
 
 start();

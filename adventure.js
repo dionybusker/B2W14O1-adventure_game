@@ -1,11 +1,11 @@
-// een nieuwe script tag wordt aangemaakt, hiermee kan een andere js file ingeladen worden
+// een nieuwe script tag wordt aangemaakt, hiermee wordt story.js ingeladen
 var ref = document.getElementsByTagName("script")[0];
 var script = document.createElement("script");
 script.src = "story.js";
 
 ref.parentNode.insertBefore(script, ref);
 
-// minigame
+// een nieuwe script tag wordt aangemaakt, hiermee wordt minigame.js ingeladen
 var ref = document.getElementsByTagName("script")[0];
 var script = document.createElement("script");
 script.src = "minigame.js";
@@ -15,7 +15,6 @@ ref.parentNode.insertBefore(script, ref);
 // titel van de pagina wordt aangepast
 document.title = "Area 51 ½ - prequel";
 
-
 var gameContainer = document.getElementById("game-container");
 var title = document.getElementById("title");
 var story = document.getElementById("description");
@@ -23,8 +22,6 @@ var button1 = document.getElementById("button1");
 var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
 var inventory = document.getElementById("inventoryItem");
-// var levelTitle = document.getElementById("level");
-
 
 title.innerText = "AREA 51 ½ – PREQUEL";
 story.innerText = "// verhaal";
@@ -69,11 +66,6 @@ inventoryTitle.style.padding = "10px";
 inventoryTitle.style.margin = "0";
 inventoryTitle.style.height = "30px";
 
-
-// // afbeelding toevoegen aan item
-// item.src = "img/item-sleutel.png";
-// // styling van de afbeelding van item
-
 inventory.style.paddingTop = "10px";
 inventory.style.visibility = "hidden";
 
@@ -88,31 +80,9 @@ footer.style.margin = "5px auto";
 footer.style.fontSize = "12px";
 
 
+// mobile moet nog toegevoegd worden
 // mobile = false (telefoon staat uit) , mobile = true (telefoon staat aan)
 var items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
-
-// var items = [
-//     {"berries" : false, image : "img/item-bessen.png"},
-//     {"knife" : false, image : "img/item-zakmes.png"},
-//     {"key" : false, image : "img/item-sleutel.png"},
-//     {"weapon" : false, image : "img/item-wapen.jpg"}
-// ];
-
-
-// var berries;
-// berries.src = "img/item-bessen.png";
-// var knife;
-// knife.src = "img/item-zakmes.png";
-
-
-// var itemImage = {
-//     function (itemIMG) {
-//         // image = "img/item-bessen.png";
-//         var img = document.createElement("img");
-//         img.src = itemIMG.image;
-//         gameContainer.appendChild(img);
-//     }
-// }
 
 
 // FUNCTIES
@@ -135,7 +105,6 @@ function start() {
     button1.addEventListener("click", level_1, {once: true});
 
     items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
-    // inventory.style.visibility = "hidden";
 }
 
 function level_1() {
@@ -292,10 +261,6 @@ function level_3() {
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
-        // items["berries"] = true;
-
-        console.log(items);
-
         items["berries"] = new Image();
         items["berries"].src = "img/item-bessen.png";
 
@@ -337,10 +302,6 @@ function level_4() {
         button1.onclick = level_5;
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
-
-        // items["knife"] = true;
-
-        console.log(items);
 
         if (items["berries"] == true) {
             var itemKnife = document.createElement("img");
@@ -425,7 +386,6 @@ function level_5() {
     button1.innerText = "Het zakmes";
     button2.innerText = "De sleutel";
 
-
     if (items["knife"] == true) {
         function action1() {
             level.innerText = "Het zakmes";
@@ -466,10 +426,6 @@ function level_5() {
         }
     } else {
         button2.style.backgroundColor = "black";
-        // button2.style.cursor = "default";
-        // button2.onmouseover = function() {
-        //     alert("Je hebt geen sleutel! \nGebruik het zakmes.");
-        // }
         button2.onclick = function() {
             return false;
         }
@@ -489,8 +445,6 @@ function level_6() {
 
     button2.style.cursor = "pointer";
     button2.style.backgroundColor = "#2f5496";
-    // button1.removeEventListener("onmouseover", level_5(), false);
-    // button2.removeEventListener("onmouseover", level_5(), false);
 
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
     button2.style.visibility = "visible";
@@ -655,8 +609,6 @@ function level_8() {
 
     button1.innerText = "Leg de voorwerpen neer";
     button2.innerText = "Negeer de brief";
-
-    // if (items["berries"])
 
     // checken of je alle voorwerpen hebt. Zo ja, dan wordt de laatste button niet zichtbaar
     if (items["berries"] == true && items["knife"] == true && items["weapon"] == true) {
@@ -854,18 +806,6 @@ function level_10() {
     button3.onclick = action3;
 }
 
-// enable/disable key
-function disableKey() {
-    document.onkeydown = function() {
-        return false;
-    }
-}
-
-function enableKey() {
-    document.onkeydown = function() {
-        return true;
-    }
-}
 
 // pagina verversen
 function refreshPage() {

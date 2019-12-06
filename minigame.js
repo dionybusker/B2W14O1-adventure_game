@@ -6,7 +6,6 @@ script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js";
 
 ref.parentNode.insertBefore(script, ref);
 
-
 var levelTitle = document.getElementById("level");
 
 function level_5_minigame() {
@@ -31,7 +30,6 @@ function level_5_minigame() {
             if (sec <= 0) {
                 clearInterval(interval);
                 can_click = false;
-                // story.innerText = "Aantal keer geklikt: " + count_clicks;
 
                 if (count_clicks >= min_clicks) {
                     story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameWin}`
@@ -100,5 +98,4 @@ function level_9_minigame() {
     }
 
     button1.onclick = action;
-
 }
