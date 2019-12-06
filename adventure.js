@@ -127,6 +127,21 @@ function level_1() {
         button1.innerText = next;
         button1.onclick = level_2;
         button2.style.visibility = "hidden";
+
+        var itemMobile = document.createElement("img");
+        gameContainer.appendChild(itemMobile);
+        items["mobile"] = new Image();
+        items["mobile"].src = "img/volume-off.png";
+
+        itemMobile.style.width = "auto";
+        itemMobile.style.height = "30px";
+        itemMobile.style.gridArea = "item";
+        itemMobile.style.position = "relative";
+        itemMobile.style.left = "450px";
+
+        itemMobile.src = items["mobile"].src;
+
+        items["mobile"] = false;
     }
 
     function action2() {
@@ -137,6 +152,21 @@ function level_1() {
         button1.innerText = next;
         button1.onclick = level_2;
         button2.style.visibility = "hidden";
+
+        var itemMobile = document.createElement("img");
+        gameContainer.appendChild(itemMobile);
+        items["mobile"] = new Image();
+        items["mobile"].src = "img/volume-on.png";
+
+        itemMobile.style.width = "auto";
+        itemMobile.style.height = "30px";
+        itemMobile.style.gridArea = "item";
+        itemMobile.style.position = "relative";
+        itemMobile.style.left = "450px";
+
+        itemMobile.src = items["mobile"].src;
+
+        items["mobile"] = true;
     }
 
     button1.onclick = action1;
@@ -644,7 +674,6 @@ function level_8() {
 
     } else {
         button1.style.backgroundColor = "black";
-        // button1.style.cursor = "default";
         button1.onclick = function() {
             return false;
         }
