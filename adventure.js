@@ -649,6 +649,8 @@ function level7_action2_ch2() { // laten liggen
     button1.onclick = level_8;
     button2.style.visibility = "hidden";
     button3.style.visibility = "hidden";
+
+    button1.removeEventListener("click", loseAudio);
 }
 
 
@@ -666,10 +668,14 @@ function level_8() {
     button1.innerText = "Leg de voorwerpen neer";
     button2.innerText = "Negeer de brief";
 
+    // if (items["berries"])
+
+    // checken of je alle voorwerpen hebt. Zo ja, dan wordt de laatste button niet zichtbaar
     if (items["berries"] == true && items["knife"] == true && items["weapon"] == true) {
         button3.style.visibility = "hidden";
     }
     
+    // checken of welke voorwerpen je niet hebt, dan wordt de juiste tekst in de derde button weergegeven
     if (items["berries"] == false || items["knife"] == false || items["weapon"] == false) {
         if (items["berries"] == false && items["weapon"] == true) {
             button3.innerText = "Je hebt geen bessen...";
@@ -680,17 +686,25 @@ function level_8() {
         }
     }
 
-    function action1() {
-        level.innerText = "Leg de voorwerpen neer";
+    // checken of je alle voorwerpen hebt, zo ja dan kun je de bovenste optie gebruiken, anders niet
+    if (items["berries"] == true && items["knife"] == true && items["weapon"] == true) {
+        function action1() {
+            level.innerText = "Leg de voorwerpen neer";
+            story.innerText = level8_action1 + newGame;
 
-        story.innerText = level8_action1 + newGame;
+            button1.innerText = win;
+            button1.onclick = refreshPage;
+            button2.style.visibility = "hidden";
+            button3.style.visibility = "hidden";
 
-        button1.innerText = win;
-        button1.onclick = refreshPage;
-        button2.style.visibility = "hidden";
-        button3.style.visibility = "hidden";
+            button1.style.backgroundColor = "#4C8507";
+        }
 
-        button1.style.backgroundColor = "#4C8507";
+    } else {
+        button1.style.backgroundColor = "black";
+        button1.onclick = function() {
+            return false;
+        }
     }
 
     function action2() {
@@ -705,16 +719,6 @@ function level_8() {
     }
 
     function action3() {
-        if (items["berries"] == false || items["knife"] == false || items["weapon"] == false) {
-            if (items["berries"] == false && items["weapon"] == true) {
-                level.innerText = "Je hebt geen bessen...";
-            } else if (items["berries"] == true && items["weapon"] == false) {
-                level.innerText = "Je hebt geen wapen...";
-            } else if (items["berries"] == false && items["weapon"] == false) {
-                level.innerText = "Je mist meerdere items...";
-            }
-        }
-
         story.innerText = level8_action3;
 
         button1.innerText = next;
@@ -728,7 +732,6 @@ function level_8() {
     button3.onclick = action3;
 
     button1.addEventListener("click", winAudio);
-
 }
 
 
@@ -871,22 +874,25 @@ function refreshPage() {
     window.location.reload();
 }
 
-// audio toevoegen, faal eind
-var audio = document.createElement("audio");
-gameContainer.appendChild(audio);
-audio.setAttribute("id", "lose");
-audio.setAttribute("src", "audio/wilhelm_scream.mp3");
 
 function loseAudio() {
+    // audio toevoegen, faal eind
+    var audio = document.createElement("audio");
+    gameContainer.appendChild(audio);
+    audio.setAttribute("id", "lose");
+    audio.setAttribute("src", "audio/wilhelm_scream.mp3");
+
     lose.play();
 }
 
-// audio toevoegen, win eind
-var audio = document.createElement("audio");
-gameContainer.appendChild(audio);
-audio.setAttribute("id", "win");
-audio.setAttribute("src", "audio/applause.mp3");
+
 
 function winAudio() {
-    win.play();
+    // audio toevoegen, win eind
+    var audio = document.createElement("audio");
+    gameContainer.appendChild(audio);
+    audio.setAttribute("id", "won");
+    audio.setAttribute("src", "audio/applause.mp3");
+
+    won.play();
 }
