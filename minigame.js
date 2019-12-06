@@ -23,15 +23,17 @@ function level_5_minigame() {
     var can_click = true;
 
     var count_clicks = 0;
+    var min_clicks = 3;
+
     function myInterval(sec) {
         var interval = setInterval(function(){startInterval()}, 1000);
         function startInterval() {
             if (sec <= 0) {
                 clearInterval(interval);
                 can_click = false;
-                story.innerText = "Aantal keer geklikt: " + count_clicks;
+                // story.innerText = "Aantal keer geklikt: " + count_clicks;
 
-                if (count_clicks >= 3) {
+                if (count_clicks >= min_clicks) {
                     story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameWin}`
                     button1.innerText = next;
                     button1.onclick = level_6;
@@ -39,7 +41,7 @@ function level_5_minigame() {
                     story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameLose} ${newGame}`
                     button1.innerText = dead;
 
-                    if (count_clicks < 3 ) {
+                    if (count_clicks < min_clicks ) {
                         loseAudio();
                     }
 
@@ -53,9 +55,6 @@ function level_5_minigame() {
                 $(levelTitle).text(sec);
             }
         }
-
-
-
     }
 
     function keyPressed() {
@@ -81,18 +80,22 @@ function level_9_minigame() {
 
     button1.innerText = "Submit";
 
+    var min_wait = 15;
+
     function action() {
-        if (input.value > 0 && input.value <= 15) {
+        if (input.value > 0 && input.value <= min_wait) {
             story.innerText = level9_minigameWin;
             button1.onclick = level_10;
             button1.innerText = next;
-        } else if (input.value > 15) {
+        } else if (input.value > min_wait) {
             story.innerText = level9_minigameLose + br;
             button1.innerText = dead;
             button1.onclick = refreshPage;
 
             button1.style.backgroundColor = "#CC0E00";
             levelImage.style.filter = "grayscale(100%)";
+
+            loseAudio();
         }
     }
 
