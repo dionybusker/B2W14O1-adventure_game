@@ -855,7 +855,6 @@ function level_10() {
     button3.onclick = action3;
 }
 
-
 // enable/disable key
 function disableKey() {
     document.onkeydown = function() {
@@ -874,7 +873,6 @@ function refreshPage() {
     window.location.reload();
 }
 
-
 function loseAudio() {
     // audio toevoegen, faal eind
     var audio = document.createElement("audio");
@@ -884,8 +882,6 @@ function loseAudio() {
 
     lose.play();
 }
-
-
 
 function winAudio() {
     // audio toevoegen, win eind

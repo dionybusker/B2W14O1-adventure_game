@@ -39,7 +39,9 @@ function level_5_minigame() {
                     story.innerText = `Aantal keer geklikt: ${count_clicks}. ${br} ${level5_minigameLose} ${newGame}`
                     button1.innerText = dead;
 
-                    // button1.addEventListener("click", loseAudio);
+                    if (count_clicks < 3 ) {
+                        loseAudio();
+                    }
 
                     button1.onclick = refreshPage;
                     button1.style.backgroundColor = "#CC0E00";
@@ -51,6 +53,9 @@ function level_5_minigame() {
                 $(levelTitle).text(sec);
             }
         }
+
+
+
     }
 
     function keyPressed() {
