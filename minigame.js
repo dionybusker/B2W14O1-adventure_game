@@ -8,6 +8,8 @@ var levelTitle = document.getElementById("level");
 
 
 function level_5_minigame() {
+    story.innerText = `Druk op de spatiebalk om te starten. ${br} Succes!`;
+
     document.onkeyup = function(arrowkey) {
         if (arrowkey.keyCode == 32) {
             keyPressed();
@@ -18,7 +20,7 @@ function level_5_minigame() {
     var can_click = true;
 
     var count_clicks = 0;
-    var min_clicks = 50;
+    var min_clicks = 60;
 
     function myInterval(sec) {
         var interval = setInterval(function(){startInterval()}, 1000);
