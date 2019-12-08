@@ -125,6 +125,7 @@ function start() {
     button1.addEventListener("click", level_1, {once: true});
 
     items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
+    console.log("Start");
 }
 
 function level_1() {
@@ -137,7 +138,9 @@ function level_1() {
     button1.innerText = "Je zet je mobiel uit";
     button2.style.visibility = "visible";
     button2.innerText = "Je laat je mobiel aan";
-    button3.style.visibility = "hidden"
+    button3.style.visibility = "hidden";
+
+    console.log("Level 1");
 
     function action1() {
         level.innerText = "Je zet je mobiel uit";
@@ -210,6 +213,8 @@ function level_2() {
     button2.innerText = "Jullie gaan rechtdoor";
     button3.innerText = "Jullie gaan naar rechts";
 
+    console.log("Level 2");
+
     function action1() {
         level.innerText = "Jullie gaan naar links";
 
@@ -273,6 +278,8 @@ function level_3() {
     button1.innerText = "Je neemt een handje";
     button2.innerText = "Je laat het liggen";
     button3.innerText = "Je stopt wat in je tas";
+
+    console.log("Level 3");
     
     function action1() {
         level.innerText = "Je neemt een handje";
@@ -342,6 +349,8 @@ function level_4() {
 
     button1.innerText = "Je pakt het mes";
     button2.innerText = "Je pakt de sleutel";
+
+    console.log("Level 4");
     
     function action1() {
         level.innerText = "Je pakt het mes";
@@ -440,6 +449,8 @@ function level_5() {
     button1.innerText = "Het zakmes";
     button2.innerText = "De sleutel";
 
+    console.log("Level 5");
+
     // er wordt gecheckt of je de knife item hebt, zo ja dan wordt de minigame gestart
     // zo niet dan wordt de button van de knife item zwart gemaakt en kan je er niet op klikken
     if (items["knife"] == true) {
@@ -507,6 +518,8 @@ function level_6() {
     button1.innerText = "Je doet wat hij zegt";
     button2.innerText = "Je overmeestert de man";
     button3.innerText = "Je spreekt hem tegen";
+
+    console.log("Level 6");
     
     function action1() {
         level.innerText = "Je doet wat hij zegt";
@@ -610,6 +623,8 @@ function level7_action2_ch1() { // meenemen
     button2.style.visibility = "hidden";
     button3.style.visibility = "hidden";
 
+    console.log("Level 7");
+
     // er wordt gekeken welke items (berries/knife) je al in bezit hebt
     // op basis hiervan wordt de weapon item op een bepaalde plek gezet
     if (items["berries"] == false && items["knife"] == true) {
@@ -665,6 +680,8 @@ function level_8() {
 
     button1.innerText = "Leg de voorwerpen neer";
     button2.innerText = "Negeer de brief";
+
+    console.log("Level 8");
 
     // checken of je alle voorwerpen hebt. Zo ja, dan wordt de laatste button niet zichtbaar
     if (items["berries"] == true && items["knife"] == true && items["weapon"] == true) {
@@ -761,6 +778,8 @@ function level_9() {
     button1.innerText = "Maak de student wakker";
     button2.innerText = "Maak de gijzelaar wakker";
     button3.innerText = "Wacht in stilte af";
+
+    console.log("Level 9");
     
     function action1() {
         level.innerText = "Maak de student wakker";
@@ -825,6 +844,8 @@ function level_10() {
     button1.innerText = "Vraag om eten";
     button2.innerText = "Bel de hulplijnen";
     button3.innerText = "Zoek naar de uitgang";
+
+    console.log("Level 10");
     
     function action1() {
         level.innerText = "Vraag om eten";
