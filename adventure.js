@@ -12,6 +12,13 @@ script.src = "minigame.js";
 
 ref.parentNode.insertBefore(script, ref);
 
+// er wordt een link tag aangemaakt in de head, hiermee kan je een font toevoegen vanuit fonts.google.com
+var font = document.createElement("link");
+font.setAttribute("rel", "stylesheet");
+font.setAttribute("href", "https://fonts.googleapis.com/css?family=Bebas+Neue|Nunito|Raleway&display=swap");
+document.head.appendChild(font);
+
+
 // titel van de pagina wordt aangepast
 document.title = "Area 51 ½ - prequel";
 
@@ -23,6 +30,13 @@ var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
 var inventory = document.getElementById("inventoryItem");
 
+gameContainer.style.fontFamily = "'Nunito', sans-serif";
+button1.style.fontFamily = "'Raleway', sans-serif";
+button2.style.fontFamily = "'Raleway', sans-serif";
+button3.style.fontFamily = "'Raleway', sans-serif";
+
+
+
 title.innerText = "AREA 51 ½ – PREQUEL";
 story.innerText = "// verhaal";
 button1.innerText = "// actie 1";
@@ -31,6 +45,9 @@ button3.innerText = "// actie 3";
 
 
 // STYLING
+// font aanpassen
+title.style.fontFamily = "'Raleway', sans-serif";
+
 // element img wordt aangemaakt, dit laat een afbeelding zien
 var levelImage = document.createElement("img");
 gameContainer.appendChild(levelImage);
@@ -51,6 +68,7 @@ level.innerText = "// level";
 level.style.gridArea = "level";
 level.style.padding = "10px";
 level.style.margin = "0";
+level.style.fontFamily = "'Bebas Neue', cursive";
 
 // element h2 (level) krijgt een id
 level.id += "level";
@@ -66,6 +84,9 @@ inventoryTitle.style.padding = "10px";
 inventoryTitle.style.margin = "0";
 inventoryTitle.style.height = "30px";
 
+inventoryTitle.style.fontFamily = "'Bebas Neue', cursive";
+
+
 inventory.style.paddingTop = "10px";
 inventory.style.visibility = "hidden";
 
@@ -80,7 +101,6 @@ footer.style.margin = "5px auto";
 footer.style.fontSize = "12px";
 
 
-// mobile moet nog toegevoegd worden
 // mobile = false (telefoon staat uit) , mobile = true (telefoon staat aan)
 var items = {"mobile" : false, "berries" : false, "knife" : false, "key" : false, "weapon" : false};
 
@@ -333,6 +353,8 @@ function level_4() {
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
+        // er wordt gecheckt of je al berries in de hand hebt, zo ja dan wordt de img van de knife toegevoegd onder de berries
+        // zo niet dan wordt de knife in de inventory gestopt (waar de img van de berries anders in had gezeten)
         if (items["berries"] == true) {
             var itemKnife = document.createElement("img");
             gameContainer.appendChild(itemKnife);
@@ -370,6 +392,8 @@ function level_4() {
         button2.style.visibility = "hidden";
         button3.style.visibility = "hidden";
 
+        // er wordt gecheckt of je al berries in de hand hebt, zo ja dan wordt de img van de key toegevoegd onder de berries
+        // zo niet dan wordt de key in de inventory gestopt (waar de img van de berries anders in had gezeten)
         if (items["berries"] == true) {
             var itemKey = document.createElement("img");
             gameContainer.appendChild(itemKey);
@@ -416,6 +440,8 @@ function level_5() {
     button1.innerText = "Het zakmes";
     button2.innerText = "De sleutel";
 
+    // er wordt gecheckt of je de knife item hebt, zo ja dan wordt de minigame gestart
+    // zo niet dan wordt de button van de knife item zwart gemaakt en kan je er niet op klikken
     if (items["knife"] == true) {
         function action1() {
             level.innerText = "Het zakmes";
@@ -434,6 +460,8 @@ function level_5() {
         }
     }
 
+    // er wordt gecheckt of je de key item hebt, zo ja dan kun je verdergaan
+    // zo niet dan wordt de button van de key item zwart gemaakt en kan je er niet op klikken
     if (items["key"] == true) {
         function action2() {
             level.innerText = "De sleutel";
@@ -582,6 +610,8 @@ function level7_action2_ch1() { // meenemen
     button2.style.visibility = "hidden";
     button3.style.visibility = "hidden";
 
+    // er wordt gekeken welke items (berries/knife) je al in bezit hebt
+    // op basis hiervan wordt de weapon item op een bepaalde plek gezet
     if (items["berries"] == false && items["knife"] == true) {
         var itemWeapon = document.createElement("img");
         gameContainer.appendChild(itemWeapon);
@@ -641,7 +671,7 @@ function level_8() {
         button3.style.visibility = "hidden";
     }
     
-    // checken of welke voorwerpen je niet hebt, dan wordt de juiste tekst in de derde button weergegeven
+    // checken welke voorwerpen je niet hebt, dan wordt de juiste tekst in de derde button weergegeven
     if (items["berries"] == false || items["knife"] == false || items["weapon"] == false) {
         if (items["berries"] == false && items["weapon"] == true) {
             button3.innerText = "Je hebt geen bessen...";
@@ -652,7 +682,8 @@ function level_8() {
         }
     }
 
-    // checken of je alle voorwerpen hebt, zo ja dan kun je de bovenste optie gebruiken, anders niet
+    // checken of je alle voorwerpen hebt, zo ja dan kun je de bovenste optie gebruiken, anders is deze optie onklikbaar en zwart gekleurd
+    // als je alle voorwerpen hebt dan is de derde button ook niet zichtbaar
     if (items["berries"] == true && items["knife"] == true && items["weapon"] == true) {
         function action1() {
             level.innerText = "Leg de voorwerpen neer";
@@ -689,6 +720,15 @@ function level_8() {
     }
 
     function action3() {
+        if (items["berries"] == false || items["knife"] == false || items["weapon"] == false) {
+            if (items["berries"] == false && items["weapon"] == true) {
+                level.innerText = "Je hebt geen bessen...";
+            } else if (items["berries"] == true && items["weapon"] == false) {
+                level.innerText = "Je hebt geen wapen...";
+            } else if (items["berries"] == false && items["weapon"] == false) {
+                level.innerText = "Je mist meerdere items...";
+            }
+        }
         story.innerText = level8_action3;
 
         button1.style.backgroundColor = "#2f5496";
@@ -712,7 +752,6 @@ function level_9() {
 
     story.innerText = levelNine;
 
-    // button1.style.cursor = "pointer";
     button1.style.backgroundColor = "#2f5496";
 
     // zichtbaarheid van de knoppen 2 en 3, knop 1 is er altijd
