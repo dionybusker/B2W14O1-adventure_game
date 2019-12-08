@@ -429,10 +429,6 @@ function level_5() {
         }
     } else {
         button1.style.backgroundColor = "black";
-        // button1.style.cursor = "default";
-        // button1.onmouseover = function() {
-        //     alert("Je hebt geen zakmes! \nGebruik de sleutel.");
-        // }
         button1.onclick = function() {
             return false;
         }
@@ -841,10 +837,12 @@ function refreshPage() {
     window.location.reload();
 }
 
+// eenmalig var audio aanmaken, hierna kan deze meerdere keren gebruikt worden in de onderstaande audio functies
+var audio = document.createElement("audio");
+gameContainer.appendChild(audio);
+
 function loseAudio() {
     // audio toevoegen, faal eind
-    var audio = document.createElement("audio");
-    gameContainer.appendChild(audio);
     audio.setAttribute("id", "lose");
     audio.setAttribute("src", "audio/wilhelm_scream.mp3");
 
@@ -853,8 +851,6 @@ function loseAudio() {
 
 function winAudio() {
     // audio toevoegen, win eind
-    var audio = document.createElement("audio");
-    gameContainer.appendChild(audio);
     audio.setAttribute("id", "won");
     audio.setAttribute("src", "audio/applause.mp3");
 
@@ -863,8 +859,6 @@ function winAudio() {
 
 function toBeContinued() {
     // audio toevoegen, to be continued
-    var audio = document.createElement("audio");
-    gameContainer.appendChild(audio);
     audio.setAttribute("id", "continued");
     audio.setAttribute("src", "audio/to_be_continued.mp3");
 
