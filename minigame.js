@@ -18,7 +18,7 @@ function level_5_minigame() {
     var can_click = true;
 
     var count_clicks = 0;
-    var min_clicks = 3;
+    var min_clicks = 50;
 
     function myInterval(sec) {
         var interval = setInterval(function(){startInterval()}, 1000);
@@ -51,6 +51,8 @@ function level_5_minigame() {
         }
     }
 
+    // zodra er op de spatiebalk wordt gedrukt, dan wordt funciton keyPressed() aangeroepen en uitgevoerd
+    // in deze functie worden het aantal clicks opgeteld met +1 en wordt de timer gestart die aftelt in function startInterval() totdat de timer gelijk is aan 0
     function keyPressed() {
         if (can_click == true) {
             count_clicks++;
@@ -75,7 +77,7 @@ function level_9_minigame() {
 
     button1.innerText = "Submit";
 
-    var min_wait = 15;
+    var min_wait = 12;
 
     function action() {
         if (input.value > 0 && input.value <= min_wait) {
